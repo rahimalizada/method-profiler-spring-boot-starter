@@ -1,0 +1,12 @@
+build:
+  - any:
+      - changed-files:
+      - '.github/**'
+      - 'pom.xml'
+      - '.gitignore'
+      - 'lombok.config'
+
+test:
+  - any:
+      - changed-files:
+      - 'src/test/**'
