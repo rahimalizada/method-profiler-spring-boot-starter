@@ -23,4 +23,8 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Profiled {}
+public @interface Profiled {
+
+    ProfiledLevel value() default ProfiledLevel.INFO;
+
+}
