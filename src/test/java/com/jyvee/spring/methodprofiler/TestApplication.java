@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2024 Rahim Alizada
+ * Copyright (c) 2023-2025 Rahim Alizada
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
 
 @SpringBootApplication
-public class TestApplication {
+class TestApplication {
 
-    public static void main(final String[] args) {
+    static void main(final String[] args) {
         final SpringApplication application = new SpringApplication(TestApplication.class);
         application.setApplicationStartup(new FlightRecorderApplicationStartup());
         application.run(args);

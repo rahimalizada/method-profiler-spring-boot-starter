@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Rahim Alizada
+ * Copyright (c) 2024-2025 Rahim Alizada
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+    @SuppressWarnings("SameReturnValue")
     @Profiled
     @GetMapping("/test")
     public String test() {
