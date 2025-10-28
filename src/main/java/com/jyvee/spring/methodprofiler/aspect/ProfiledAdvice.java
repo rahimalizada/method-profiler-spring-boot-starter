@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Rahim Alizada
+ * Copyright (c) 2024-2025 Rahim Alizada
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,8 @@ public class ProfiledAdvice {
 
     // @Around("@annotation(com.jyvee.spring.methodprofiler.aspect.Profiled)")
     @Around("execution(public * *(..)) && @annotation(profiled)")
-    @SuppressWarnings("IllegalThrows")
-    public Object executionTime2(final ProceedingJoinPoint point, @SuppressWarnings("unused") final Profiled profiled)
+    @SuppressWarnings({"IllegalThrows", "ProhibitedExceptionDeclared"})
+    public Object executionTime(final ProceedingJoinPoint point, @SuppressWarnings("unused") final Profiled profiled)
         throws Throwable {
         if (!this.properties.getLoggingEnabled() && !this.properties.getEventPublishingEnabled()) {
             return point.proceed();

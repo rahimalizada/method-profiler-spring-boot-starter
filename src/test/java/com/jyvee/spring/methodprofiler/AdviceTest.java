@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2024 Rahim Alizada
+ * Copyright (c) 2023-2025 Rahim Alizada
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 
-import java.io.IOException;
-
 @SpringBootTest(classes = TestApplication.class)
 class AdviceTest {
 
@@ -32,12 +30,12 @@ class AdviceTest {
     private MethodProfilerConfigurationProperties config;
 
     @DynamicPropertySource
-    static void setProperties(final DynamicPropertyRegistry registry) throws IOException {
+    static void setProperties(final DynamicPropertyRegistry registry) {
         registry.add("method-profiler.event-publishing-enabled", () -> false);
     }
 
     @Test
-    public void testMethod() {
+    void testMethod() {
         Assertions.assertTrue(this.config.getLoggingEnabled());
         Assertions.assertFalse(this.config.getEventPublishingEnabled());
     }
